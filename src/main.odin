@@ -20,4 +20,7 @@ main :: proc() {
 	if accept_err != nil {
 		fmt.panicf("%s", accept_err)
 	}
+
+	response := "+PONG\r\n"
+	_, _ = net.send(client_socket, transmute([]u8)response)
 }
